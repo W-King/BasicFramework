@@ -1,15 +1,13 @@
 //
 //  ProjectConfigHeader.h
-//  BigSport
+//  PPX_EngineeringFramework
 //
-//  Created by 刘凡 on 16/7/15.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Created by pipixia on 16/9/22.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
 #ifndef ProjectConfigHeader_h
 #define ProjectConfigHeader_h
-
-#import "BaseMacro.h"
 
 //字体
 #define kDefaultFontSize     14.0f

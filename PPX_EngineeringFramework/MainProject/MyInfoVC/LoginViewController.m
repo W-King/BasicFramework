@@ -14,15 +14,53 @@
 
 @implementation LoginViewController
 
+- (instancetype)initWithShowType:(LoginViewControllerShowType)type
+{
+    self = [self init];
+    if (self) {
+        self.showType = type;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initUI];
+
 }
 
+#pragma mark - Init UI
+
+- (void)modifyCustomNav
+{
+    [self.customNav setNavTitle:@"登录"];
+    
+    if (_showType == LoginViewControllerShowType_Present)
+    {
+        [self.customNav setLeftNavButton:[[self.customNav class] createNavButtonByImageNormal:@"icon_dismiss" imageSelected:@"icon_dismiss" target:self action:@selector(dismissButtonEvent)]];
+    }
+}
+
+- (void)initUI
+{
+    [self modifyCustomNav];
+}
+
+
+#pragma mark - Button Event
+
+- (void)dismissButtonEvent
+{
+    self.loginResult(NO);
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 pipixia. All rights reserved.
 //
 
-#ifndef APIHeaderMarco_h
-#define APIHeaderMarco_h
+#ifndef APIHeader_h
+#define APIHeader_h
 
 /*
  *请求网址拼接
@@ -16,4 +16,4 @@
 
 
 
-#endif /* APIHeaderMarco_h */
+#endif /* APIHeader_h */

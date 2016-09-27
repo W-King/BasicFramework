@@ -1,13 +1,13 @@
 //
 //  BaseRequestCollectionViewController.m
-//  BigSport
+//  PPX_EngineeringFramework
 //
-//  Created by 刘凡 on 16/6/13.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Created by pipixia on 16/9/26.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
 #import "BaseRequestCollectionViewController.h"
-#import "XTYRefreshTool.h"
+#import "BXRefreshTool.h"
 #define BRCStartPageIndex 1
 @interface BaseRequestCollectionViewController ()
 
@@ -34,7 +34,7 @@
 
 - (void)configBaseCollectionViewView
 {
-    [XTYRefreshTool conterllor:self tableView:mainCollectionView headAction:@selector(headerRequset) footAction:@selector(footerRequest)];
+    [BXRefreshTool conterllor:self tableView:mainCollectionView headAction:@selector(headerRequset) footAction:@selector(footerRequest)];
 }
 
 - (void)initRequestCollectionViewUI

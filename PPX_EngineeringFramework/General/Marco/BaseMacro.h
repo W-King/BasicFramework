@@ -9,9 +9,12 @@
 #ifndef BaseMacro_h
 #define BaseMacro_h
 
-#import "BaseColorMacro.h"
-#import "BaseFontMacro.h"
-#import "BaseSizeMacro.h"
+#import "ProjectConfigHeader.h"
+#import "RequestURL.h"
+#import "APIHeader.h"
+#import "VendorMarco.h"
+#import "NotificationMacro.h"
+#import "BXMacro.h"
 
 
-#endif /* BaseMacro_h */
+#endif /* RoundMacro_h */

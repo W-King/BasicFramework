@@ -1,9 +1,9 @@
 //
 //  CustomNavView.m
-//  TinyStore
+//  PPX_EngineeringFramework
 //
-//  Created by 齐志坚 on 15/3/10.
-//  Copyright (c) 2015年 齐志坚. All rights reserved.
+//  Created by pipixia on 16/9/26.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
 #import "CustomNavView.h"

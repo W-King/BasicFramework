@@ -20,10 +20,10 @@
 /**
  用户信息 定义宏变量
  */
-#define XTY_UserInfo [BSaveMessage ShareUserInfoModel]
-#define XTY_UserCode [BSaveMessage ShareUserInfoModel].userCode
-#define XTY_UserToken [BSaveMessage ShareUserInfoModel].userToken
-#define XTY_IsUserWiXin [BSaveMessage ShareUserInfoModel].isUserWiXin
+#define XTY_UserInfo [UserInfoMessage ShareUserInfoModel]
+#define XTY_UserCode [UserInfoMessage ShareUserInfoModel].userCode
+#define XTY_UserToken [UserInfoMessage ShareUserInfoModel].userToken
+#define XTY_IsUserWiXin [UserInfoMessage ShareUserInfoModel].isUserWiXin
 
 
 - (void)resetInfo:(NSDictionary*)aDict;

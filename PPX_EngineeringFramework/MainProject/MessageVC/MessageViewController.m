@@ -17,8 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initUI];
+}
+#pragma mark - Init UI
+- (void)modifyCustomNav{
+    self.customNav.backButton.hidden = YES;
+    [self.customNav setNavTitle:@"消息"];
 }
 
+-(void)initUI{
+    [self modifyCustomNav];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

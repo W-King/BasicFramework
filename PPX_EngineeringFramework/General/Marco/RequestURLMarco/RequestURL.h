@@ -1,13 +1,13 @@
 //
-//  RequestURLMarco.h
+//  RequestURL.h
 //  PPX_EngineeringFramework
 //
 //  Created by pipixia on 16/9/22.
 //  Copyright © 2016年 pipixia. All rights reserved.
 //
 
-#ifndef RequestURLMarco_h
-#define RequestURLMarco_h
+#ifndef RequestURL_h
+#define RequestURL_h
 
 /*
  *   1 生产环境  发布版本使用
@@ -43,4 +43,4 @@
 
 #endif
 
-#endif /* RequestURLMarco_h */
+#endif /* RequestURL_h */

@@ -1,13 +1,13 @@
 //
-//  BaseTableViewController.m
-//  CultureOfElectricity
+//  BaseReuqestTableViewController.m
+//  PPX_EngineeringFramework
 //
-//  Created by 刘凡 on 16/5/11.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Created by pipixia on 16/9/26.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
 #import "BaseReuqestTableViewController.h"
-#import "XTYRefreshTool.h"
+#import "BXRefreshTool.h"
 #define BaseRefreshStartPageIndex 1
 @interface BaseReuqestTableViewController ()
 {
@@ -37,7 +37,7 @@
 
 - (void)configBaseTableView
 {
-    [XTYRefreshTool conterllor:self tableView:mainTableView headAction:@selector(headerRequset) footAction:@selector(footerRequest)];
+    [BXRefreshTool conterllor:self tableView:mainTableView headAction:@selector(headerRequset) footAction:@selector(footerRequest)];
 }
 
 

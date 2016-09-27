@@ -8,15 +8,17 @@
 
 #import "MainTabbarController.h"
 #import "HomeViewController.h"
-
 #import "SportTimeViewController.h"
+#import "MessageViewController.h"
 #import "MyInfoViewController.h"
 #import "BaseNav.h"
-#import "BaseColorMacro.h"
+
+#import "BaseMacro.h"
 #import "LoginServiceTool.h"
 #import "ProjectConfigHeader.h"
-#import "UserInfoTool.h"
-#import "MessageViewController.h"
+
+
+
 @interface MainTabbarController()
 <UITabBarControllerDelegate>
 {
@@ -34,22 +36,15 @@
     if (self) {
         self.delegate = self;
         [self creatViewController];
-        [self addObserverEvent];
     }
     return self;
 }
 
 - (void)creatViewController
 {
-//    RecommendViewController *recommendVC = [[RecommendViewController alloc] init];
     HomeViewController *recommendVC = [[HomeViewController alloc] init];
     BaseNav *recommendNav = [[BaseNav alloc] initWithRootViewController:recommendVC];
     recommendNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"推荐" image:[[UIImage imageNamed:@"Tabbar_icon_Recommend_N"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"Tabbar_icon_Recommend_S"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-   
-// V1.1.0  发现更换为运动时刻 LF
-//    FindViewController *findViewController = [[FindViewController alloc] init];
-//    BaseNav *findNav = [[BaseNav alloc] initWithRootViewController:findViewController];
-//     findNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"时刻" image:[[UIImage imageNamed:@"Tabbar_icon_find_N"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"Tabbar_icon_find_S"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     SportTimeViewController *findViewController = [[SportTimeViewController alloc] init];
     BaseNav *findNav = [[BaseNav alloc] initWithRootViewController:findViewController];
@@ -71,20 +66,6 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGB_COLOR(@"#F46B0A"),NSFontAttributeName:[UIFont boldSystemFontOfSize:10.0f]} forState:UIControlStateSelected];
 }
 
-- (void)addObserverEvent
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logoutEvent) name:@"XTYLogoutEvent" object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homeEvent) name:@"XTYHomeEvent" object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MomentEvent) name:@"XTYMomentEvent" object:nil];
-
-
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(messageNavNumber:) name:@"XTYMessageNumber" object:nil];
-    
-    
-
-}
 
 #pragma mark - UITabBarControllerDelegate
 
@@ -111,31 +92,6 @@
     self.selectedIndex = [self.viewControllers indexOfObject:viewController];
 }
 
-#pragma mark - NSNotification Event
-- (void)homeEvent
-{
-    self.selectedIndex = 0;
-}
-- (void)MomentEvent
-{
-    self.selectedIndex = 1;
-}
-- (void)logoutEvent
-{
-    self.selectedIndex = 0;
-    messageNav.tabBarItem.badgeValue = nil;
-}
 
-- (void)messageNavNumber:(NSNotification*)notificationNumber
-{
-    NSDictionary *nameDictionary = [notificationNumber userInfo];
-    NSString *numberStr = nil;
-    
-    if ([nameDictionary[@"messsageNumber"] intValue] > 0)
-    {
-        numberStr = nameDictionary[@"messsageNumber"];
-    }
-    messageNav.tabBarItem.badgeValue = numberStr;
-}
 
 @end

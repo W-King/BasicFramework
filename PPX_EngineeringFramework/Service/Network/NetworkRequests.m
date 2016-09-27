@@ -1,9 +1,9 @@
 //
-//  Request.m
-//  BigSport
+//  NetworkRequests.m
+//  PPX_EngineeringFramework
 //
-//  Created by 刘凡 on 16/4/11.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Created by pipixia on 16/9/26.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
 #import "NetworkRequests.h"
@@ -11,7 +11,6 @@
 #import "RequestInfoManage.h"
 #import "JSONModel.h"
 #import "NetworkRequestsTool.h"
-#import "UserInfoTool.h"
 @implementation NetworkRequests
 
 static AFHTTPSessionManager *manager = nil;
@@ -47,20 +46,8 @@ static AFHTTPSessionManager *manager = nil;
 {
     RequestInfoModel *method = [RequestInfoManage findMethod:urlName];
     manager.requestSerializer.timeoutInterval = method.timeout;
-
-    NSMutableDictionary *parameters= nil;
-    if (dict)
-    {
-        parameters = [dict mutableCopy];
-        [parameters setObject:[self parameters] forKey:@"zoo"];
-    }
-    else
-    {
-        parameters = [@{@"zoo":[self parameters]} mutableCopy];
-    }
-   
-    
-    NSURLSessionDataTask *task = [manager POST:method.url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
+       
+    NSURLSessionDataTask *task = [manager POST:method.url parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
     {
         if (successCallback)
         {
@@ -77,19 +64,6 @@ static AFHTTPSessionManager *manager = nil;
         }
     }];
     return task;
-}
-
-- (NSDictionary *)parameters
-{
-
-    NSString *token = [UserInfoTool getUserToken];
-    if (!token)
-    {
-        token = @"";
-    }
-    
-    NSDictionary *zoo = @{@"key":APIKey,@"token":token};
-    return zoo;
 }
 
 

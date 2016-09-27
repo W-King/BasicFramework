@@ -1,13 +1,14 @@
 //
-//  RequestInfoConfiguration.m
-//  BigSport
+//  RequestInfoModel.m
+//  PPX_EngineeringFramework
 //
-//  Created by 刘凡 on 16/4/11.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Created by pipixia on 16/9/26.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
+
 #import "RequestInfoModel.h"
-#import "APIHeader.h"
+#import "RequestURL.h"
 @implementation RequestInfoModel
 + (instancetype)initName:(NSString *)name path:(NSString *)path returnType:(NSString *)returnType
 {

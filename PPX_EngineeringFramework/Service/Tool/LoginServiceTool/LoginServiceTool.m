@@ -1,14 +1,15 @@
 //
 //  LoginTool.m
-//  BigSport
+//  PPX_EngineeringFramework
 //
-//  Created by 刘凡 on 16/4/11.
-//  Copyright © 2016年 iCHSY. All rights reserved.
+//  Created by pipixia on 16/9/26.
+//  Copyright © 2016年 pipixia. All rights reserved.
 //
 
 #import "LoginServiceTool.h"
 #import "BaseNav.h"
-#import "UserInfoTool.h"
+#import "UserInfoMessage.h"
+
 @implementation LoginServiceTool
 
 + (void)presentLoginViewControllerWihtViewController:(UIViewController*)viewController loginResult:(void(^)(BOOL isLogin))result
@@ -21,7 +22,7 @@
 
 + (void)needLoginServiceViewController:(id)controller selector:(SEL)selector
 {
-    if ([UserInfoTool isLogin])
+    if (XTY_UserCode.length > 0)
     {
         [self viewController:controller selector:selector];
     }
@@ -38,7 +39,7 @@
 
 + (void)needLoginServiceViewController:(id)controller selector:(SEL)selector withObject:(id)object;
 {
-    if ([UserInfoTool isLogin])
+    if (XTY_UserCode.length > 0)
     {
         [self viewController:controller selector:selector withObject:object];
     }
