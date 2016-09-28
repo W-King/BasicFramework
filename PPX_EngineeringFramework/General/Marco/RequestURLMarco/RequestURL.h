@@ -19,23 +19,23 @@
 #if PRODUCT_APP_STATUS ==1
 
 //App 生产状态 线上环境
-#define kWebAPIDefine           @"http://api-001.sport.bigtiyu.com/api"
-#define kWebURLDefine           @"http://api-001.sport.bigtiyu.com"
-#define kStaticWebURLDefine     @"http://api-001.sport.bigtiyu.com/webjars/sportstatic"
+#define kWebAPIDefine           @"http://xxx"
+#define kWebURLDefine           @"http://xxx"
+#define kStaticWebURLDefine     @"http://xxx"
 
-#define XTY_IAP_VerifyReceipt   @"https://buy.itunes.apple.com/verifyReceipt"
-#define XYT_WX_WEBKEY           @"wxfd44c999a0475e56"
+#define XTY_IAP_VerifyReceipt   @"https://xxx"
+#define XYT_WX_WEBKEY           @"xxx"
 
 #elif PRODUCT_APP_STATUS ==2
 
 
 //App 测试状态 测试环境
-#define kWebAPIDefine           @"http://beta-sportcloud.ntw.srnpr.com/api"
-#define kWebURLDefine           @"http://beta-sportcloud.ntw.srnpr.com"
-#define kStaticWebURLDefine     @"http://beta-sportcloud.ntw.srnpr.com/webjars/sportstatic"
+#define kWebAPIDefine           @"http://xxx"
+#define kWebURLDefine           @"http://xxx"
+#define kStaticWebURLDefine     @"http://xxx"
 
-#define XTY_IAP_VerifyReceipt   @"https://sandbox.itunes.apple.com/verifyReceipt"
-#define XYT_WX_WEBKEY           @"wxec842da73ebe11a4"
+#define XTY_IAP_VerifyReceipt   @"https://xxx"
+#define XYT_WX_WEBKEY           @"xxx"
 
 #elif PRODUCT_APP_STATUS ==3
 
